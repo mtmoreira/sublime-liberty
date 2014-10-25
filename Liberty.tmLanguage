@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>lib</string>
+	</array>
+	<key>name</key>
+	<string>Open Liberty (.lib)</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>begin</key>
+			<string>/\*</string>
+			<key>comment</key>
+			<string>Single quotes.</string>
+			<key>end</key>
+			<string>\*/</string>
+			<key>name</key>
+			<string>string.quoted.single.sp</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>\"</string>
+			<key>comment</key>
+			<string>Double quotes.</string>
+			<key>end</key>
+			<string>\"</string>
+			<key>name</key>
+			<string>string.quoted.double.sp</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.lib</string>
+	<key>uuid</key>
+	<string>ea32a295-7c2e-4671-b672-75db8ada3e9c</string>
+</dict>
+</plist>

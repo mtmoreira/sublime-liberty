@@ -1,0 +1,17 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: Open Liberty (.lib)
+scopeName: source.lib
+fileTypes: [lib]
+uuid: ea32a295-7c2e-4671-b672-75db8ada3e9c
+
+patterns:
+- begin: /\*
+  end: \*/
+  name: string.quoted.single.sp
+  comment: Single quotes.
+- begin: \"
+  end: \"
+  name: string.quoted.double.sp
+  comment: Double quotes.
+...
