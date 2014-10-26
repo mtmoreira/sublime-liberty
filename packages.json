@@ -7,7 +7,7 @@
 			"releases": [
 				{
 					"version": "0.1",
-					"url": "https://github.com/mtmoreira/sublime-liberty",
+					"url": "https://github.com/mtmoreira/sublime-liberty/tree/master",
 					"date": "2014-10-25 18:30:00",
 					"sublime_text": "*"
 				}
