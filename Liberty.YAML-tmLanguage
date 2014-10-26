@@ -1,6 +1,6 @@
 # [PackageDev] target_format: plist, ext: tmLanguage
 ---
-name: Open Liberty (.lib)
+name: Liberty
 scopeName: source.lib
 fileTypes: [lib]
 uuid: ea32a295-7c2e-4671-b672-75db8ada3e9c
