@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>fileTypes</key>
@@ -7,18 +7,18 @@
 		<string>lib</string>
 	</array>
 	<key>name</key>
-	<string>Open Liberty (.lib)</string>
+	<string>Liberty</string>
 	<key>patterns</key>
 	<array>
 		<dict>
 			<key>begin</key>
 			<string>/\*</string>
 			<key>comment</key>
-			<string>Single quotes.</string>
+			<string>Comments.</string>
 			<key>end</key>
 			<string>\*/</string>
 			<key>name</key>
-			<string>string.quoted.single.sp</string>
+			<string>comment</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -28,7 +28,154 @@
 			<key>end</key>
 			<string>\"</string>
 			<key>name</key>
-			<string>string.quoted.double.sp</string>
+			<string>string.quoted</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>string.quoted</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Library definitions.</string>
+			<key>match</key>
+			<string>^\s*(library)\s*\(([^\)]+)\)</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>string.quoted</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Liberty parameters.</string>
+			<key>match</key>
+			<string>^\s*(default_wire_load_mode|leakage_power_unit|default_cell_leakage_power|default_fanout_load|default_inout_pin_cap|default_input_pin_cap|default_max_fanout|default_output_pin_cap|input_threshold_pct_fall|input_threshold_pct_rise|output_threshold_pct_fall|output_threshold_pct_rise|simulation|slew_derate_from_library|slew_lower_threshold_pct_fall|slew_lower_threshold_pct_rise|slew_upper_threshold_pct_fall|slew_upper_threshold_pct_rise|capacitive_load_unit|nom_process|nom_voltage|nom_temperature|time_unit|voltage_unit|current_unit|pulling_resistance_unit)\s*:*\s*([0-9]*)</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>string.quoted</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Library definitions.</string>
+			<key>match</key>
+			<string>^\s*(power_lut_template|lu_table_template|wire_load_selection|power_supply|operating_conditions|wire_load)\s*\(([^\)]*)\)</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>string.quoted</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>liberty parameters.</string>
+			<key>match</key>
+			<string>^\s*(index_1|index_2|variable_1|variable_2|wire_load_from_area|area|capacitance|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|resistance|slope|)\s*[:\(]\s*([0-9,\._a-zA-Z\"]*)\s*[\);]</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>string.quoted</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Cell definitions.</string>
+			<key>match</key>
+			<string>^\s*(cell)\s*\(([^\)]*)\)</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>string.quoted</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Cell parameters.</string>
+			<key>match</key>
+			<string>^\s*(rail_connection|cell_footprint|cell_leakage_power|clock_gating_integrated_cell)\s*[:\(]\s*([0-9,\._a-zA-Z\"]*)\s*[\);]</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>constant.language</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>string.quoted</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Cell characteristics.</string>
+			<key>match</key>
+			<string>^\s*(internal_power|fall_power|rise_power|timing|fall_constraint|rise_constraint|cell_fall|cell_rise|fall_transition|rise_transition|pin|leakage_power)\s*\(([^\)]*)\)</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>string.quoted</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Cell characteristics.</string>
+			<key>match</key>
+			<string>^\s*(value)\s*:\s*([0-9,\.e-]*)</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
