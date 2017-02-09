@@ -1,0 +1,9 @@
+
+name: Liberty Comments
+scope: source.lib
+settings:
+  shellVariables:
+  - {name: TM_COMMENT_START_2, value: '/*'}
+  - {name: TM_COMMENT_END_2, value: '*/'}
+
+uuid: 38DBCCE5-2005-410C-B7D7-013097751AC8

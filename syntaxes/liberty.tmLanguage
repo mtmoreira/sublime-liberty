@@ -21,16 +21,6 @@
 			<string>comment</string>
 		</dict>
 		<dict>
-			<key>begin</key>
-			<string>\"</string>
-			<key>comment</key>
-			<string>Double quotes.</string>
-			<key>end</key>
-			<string>\"</string>
-			<key>name</key>
-			<string>string.quoted</string>
-		</dict>
-		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -55,64 +45,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.parameter</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>string.quoted</string>
-				</dict>
-			</dict>
-			<key>comment</key>
-			<string>Liberty parameters.</string>
-			<key>match</key>
-			<string>^\s*(default_wire_load_mode|leakage_power_unit|default_cell_leakage_power|default_fanout_load|default_inout_pin_cap|default_input_pin_cap|default_max_fanout|default_output_pin_cap|input_threshold_pct_fall|input_threshold_pct_rise|output_threshold_pct_fall|output_threshold_pct_rise|simulation|slew_derate_from_library|slew_lower_threshold_pct_fall|slew_lower_threshold_pct_rise|slew_upper_threshold_pct_fall|slew_upper_threshold_pct_rise|capacitive_load_unit|nom_process|nom_voltage|nom_temperature|time_unit|voltage_unit|current_unit|pulling_resistance_unit)\s*:*\s*([0-9]*)</string>
-		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>string.quoted</string>
-				</dict>
-			</dict>
-			<key>comment</key>
-			<string>Library definitions.</string>
-			<key>match</key>
-			<string>^\s*(power_lut_template|lu_table_template|wire_load_selection|power_supply|operating_conditions|wire_load)\s*\(([^\)]*)\)</string>
-		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>variable.parameter</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>string.quoted</string>
-				</dict>
-			</dict>
-			<key>comment</key>
-			<string>liberty parameters.</string>
-			<key>match</key>
-			<string>^\s*(index_1|index_2|variable_1|variable_2|wire_load_from_area|area|capacitance|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|resistance|slope|)\s*[:\(]\s*([0-9,\._a-zA-Z\"]*)\s*[\);]</string>
-		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type</string>
+					<string>keyword.control</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -133,10 +66,66 @@
 					<key>name</key>
 					<string>variable.parameter</string>
 				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Liberty parameters.</string>
+			<key>match</key>
+			<string>^\s*(default_wire_load_mode|leakage_power_unit|default_cell_leakage_power|default_fanout_load|default_inout_pin_cap|default_input_pin_cap|default_max_fanout|default_output_pin_cap|input_threshold_pct_fall|input_threshold_pct_rise|output_threshold_pct_fall|output_threshold_pct_rise|simulation|slew_derate_from_library|slew_lower_threshold_pct_fall|slew_lower_threshold_pct_rise|slew_upper_threshold_pct_fall|slew_upper_threshold_pct_rise|capacitive_load_unit|nom_process|nom_voltage|nom_temperature|time_unit|voltage_unit|current_unit|pulling_resistance_unit|direction|power_down_function|fall_capacitance_range|bus_type|rise_capacitance_range|rise_capacitance|fall_capacitance|related_power_pin|related_ground_pin|related_pg_pin|max_transition|delay_model|revision|date|comment|process|temperature|voltage|default_max_transition|in_place_swap_mode|default_operating_conditions|bus_naming_style|pg_type|max_capacitance|related_pin|timing_sense|timing_type)\s*[:\\]*\s*</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type</string>
+				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
 					<string>string.quoted</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Library definitions.</string>
+			<key>match</key>
+			<string>^\s*(|voltage_map|power_lut_template|lu_table_template|wire_load_selection|power_supply|operating_conditions|wire_load|type)\s*\(([^\)]*)</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Library definitions.</string>
+			<key>match</key>
+			<string>^\s*(index_1|index_2|values)\s*\(([^\)]*)</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>liberty parameters.</string>
+			<key>match</key>
+			<string>^\s*(|variable_1|variable_2|wire_load_from_area|area|capacitance|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|base_type|data_type|bit_width|bit_from|bit_to|downto|fanout_length|fanout_length|fanout_length|resistance|slope|voltage_map)\s*[:\(]\s*([0-9,\._a-zA-Z\"]*)\s*[\);]</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter</string>
 				</dict>
 			</dict>
 			<key>comment</key>
@@ -161,21 +150,7 @@
 			<key>comment</key>
 			<string>Cell characteristics.</string>
 			<key>match</key>
-			<string>^\s*(internal_power|fall_power|rise_power|timing|fall_constraint|rise_constraint|cell_fall|cell_rise|fall_transition|rise_transition|pin|leakage_power)\s*\(([^\)]*)\)</string>
-		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>string.quoted</string>
-				</dict>
-			</dict>
-			<key>comment</key>
-			<string>Cell characteristics.</string>
-			<key>match</key>
-			<string>^\s*(value)\s*:\s*([0-9,\.e-]*)</string>
+			<string>^\s*(internal_power|fall_power|rise_power|timing|fall_constraint|rise_constraint|cell_fall|cell_rise|fall_transition|rise_transition|pin|bus|bus_type|pg_pin|leakage_power)\s*\(([^\)]*)\)</string>
 		</dict>
 	</array>
 	<key>scopeName</key>

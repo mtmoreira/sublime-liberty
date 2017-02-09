@@ -1,0 +1,73 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: Liberty
+scopeName: source.lib
+fileTypes: [lib]
+uuid: ea32a295-7c2e-4671-b672-75db8ada3e9c
+
+patterns:
+
+- begin: /\*
+  end: \*/
+  name: comment
+  comment: Comments.
+
+# - begin: \"
+#   end: \"
+#   name: string.quoted
+#   comment: Double quotes.
+
+- match: ^\s*(library)\s*\(([^\)]+)\)
+  captures:
+   '1': {name: "keyword.control" }
+   '2': {name: "string.quoted" }
+  comment: Library definitions.
+
+- match: ^\s*(cell)\s*\(([^\)]*)\)
+  captures:
+   '1': {name: "keyword.control" }
+   '2': {name: "string.quoted" }
+  comment: Cell definitions.
+
+
+
+- match: ^\s*(default_wire_load_mode|leakage_power_unit|default_cell_leakage_power|default_fanout_load|default_inout_pin_cap|default_input_pin_cap|default_max_fanout|default_output_pin_cap|input_threshold_pct_fall|input_threshold_pct_rise|output_threshold_pct_fall|output_threshold_pct_rise|simulation|slew_derate_from_library|slew_lower_threshold_pct_fall|slew_lower_threshold_pct_rise|slew_upper_threshold_pct_fall|slew_upper_threshold_pct_rise|capacitive_load_unit|nom_process|nom_voltage|nom_temperature|time_unit|voltage_unit|current_unit|pulling_resistance_unit|direction|power_down_function|fall_capacitance_range|bus_type|rise_capacitance_range|rise_capacitance|fall_capacitance|related_power_pin|related_ground_pin|related_pg_pin|max_transition|delay_model|revision|date|comment|process|temperature|voltage|default_max_transition|in_place_swap_mode|default_operating_conditions|bus_naming_style|pg_type|max_capacitance|related_pin|timing_sense|timing_type)\s*[:\\]*\s*
+  captures:
+   '1': {name: "variable.parameter" }
+   # '2': {name: "string.quoted" }
+  comment: Liberty parameters.
+
+- match: ^\s*(|voltage_map|power_lut_template|lu_table_template|wire_load_selection|power_supply|operating_conditions|wire_load|type)\s*\(([^\)]*)
+  captures:
+   '1': {name: "storage.type" }
+   '2': {name: "string.quoted" }
+  comment: Library definitions.
+
+
+- match: ^\s*(index_1|index_2|values)\s*\(([^\)]*)
+  captures:
+   '1': {name: "storage.type" }
+  comment: Library definitions.
+
+- match: ^\s*(|variable_1|variable_2|wire_load_from_area|area|capacitance|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|fanout_length|base_type|data_type|bit_width|bit_from|bit_to|downto|fanout_length|fanout_length|fanout_length|resistance|slope|voltage_map)\s*[:\(]\s*([0-9,\._a-zA-Z\"]*)\s*[\);]
+  captures:
+   '1': {name: "variable.parameter" }
+   # '2': {name: "string.quoted" }
+  comment: liberty parameters.
+
+- match: ^\s*(rail_connection|cell_footprint|cell_leakage_power|clock_gating_integrated_cell)\s*[:\(]\s*([0-9,\._a-zA-Z\"]*)\s*[\);]
+  captures:
+   '1': {name: "variable.parameter" }
+   # '2': {name: "string.quoted" }
+  comment: Cell parameters.
+
+- match: ^\s*(internal_power|fall_power|rise_power|timing|fall_constraint|rise_constraint|cell_fall|cell_rise|fall_transition|rise_transition|pin|bus|bus_type|pg_pin|leakage_power)\s*\(([^\)]*)\)
+  captures:
+   '1': {name: "constant.language" }
+   '2': {name: "string.quoted" }
+  comment: Cell characteristics.
+
+# - match: ^\s*(value)\s*:\s*([0-9,\.e-]*)
+#   captures:
+#    '2': {name: "string.quoted" }
+#   comment: Cell characteristics.
